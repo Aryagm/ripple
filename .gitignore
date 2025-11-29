@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Build outputs
+out/
+deploy/
+
+# Netlify
+netlify/
+netlify.toml
