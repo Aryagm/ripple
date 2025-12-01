@@ -241,7 +241,7 @@ export default function DashboardPage() {
                     {upcomingEvents.map((event) => (
                       <div
                         key={event.id}
-                        className="flex items-center gap-3 p-3 rounded-lg bg-muted/50"
+                        className="flex items-center gap-3 p-3 rounded-lg bg-muted/50 transition-colors hover:bg-muted/70 cursor-pointer"
                       >
                         <div
                           className="w-1 h-12 rounded-full shrink-0"

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useUserStore } from '@/store/user-store';
 import { Loader2 } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Home() {
   const router = useRouter();
@@ -27,8 +28,14 @@ export default function Home() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
       <div className="flex flex-col items-center gap-4">
-        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center animate-pulse">
-          <span className="text-3xl font-bold text-primary-foreground">R</span>
+        <div className="w-16 h-16 rounded-2xl flex items-center justify-center overflow-hidden animate-pulse">
+          <Image
+            src="/images/ripple_logo.png"
+            alt="Ripple"
+            width={64}
+            height={64}
+            className="w-full h-full object-contain"
+          />
         </div>
         <Loader2 className="h-6 w-6 animate-spin text-primary" />
         <p className="text-muted-foreground text-sm">Loading Ripple...</p>

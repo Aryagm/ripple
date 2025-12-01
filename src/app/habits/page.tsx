@@ -380,7 +380,7 @@ export default function HabitsPage() {
                     exit={{ opacity: 0, scale: 0.9 }}
                   >
                     <Card
-                      className={`transition-all ${
+                      className={`transition-all hover:shadow-md ${
                         isCompleted ? 'bg-primary/10 border-primary/30' : ''
                       }`}
                     >

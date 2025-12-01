@@ -16,6 +16,7 @@ import {
 import { Progress } from '@/components/ui/progress';
 import { Flame, Settings, LogOut, Trophy } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface HeaderProps {
   title?: string;
@@ -40,9 +41,15 @@ export function Header({ title }: HeaderProps) {
     <header className="sticky top-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
       <div className="flex items-center justify-between h-14 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <div className="flex items-center gap-3">
-          <Link href="/dashboard" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-lg font-bold text-primary-foreground">R</span>
+          <Link href="/dashboard" className="flex items-center gap-2 transition-opacity hover:opacity-80">
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden transition-transform hover:scale-105">
+              <Image
+                src="/images/ripple_logo.png"
+                alt="Ripple"
+                width={32}
+                height={32}
+                className="w-full h-full object-contain"
+              />
             </div>
             {title ? (
               <h1 className="text-lg font-semibold">{title}</h1>
@@ -55,7 +62,7 @@ export function Header({ title }: HeaderProps) {
         <div className="flex items-center gap-2">
           {/* Points Badge */}
           <Link href="/social">
-            <Badge variant="secondary" className="gap-1 px-2 py-1 cursor-pointer hover:bg-secondary/80">
+            <Badge variant="secondary" className="gap-1 px-2 py-1 cursor-pointer transition-colors hover:bg-secondary/80">
               <Trophy className="h-3 w-3 text-yellow-500" />
               <span className="text-xs font-medium">{totalPoints}</span>
             </Badge>
@@ -92,13 +99,13 @@ export function Header({ title }: HeaderProps) {
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem asChild>
-                <Link href="/social" className="cursor-pointer">
+                <Link href="/social" className="cursor-pointer transition-opacity hover:opacity-80">
                   <Trophy className="mr-2 h-4 w-4" />
                   Achievements
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="/settings" className="cursor-pointer">
+                <Link href="/settings" className="cursor-pointer transition-opacity hover:opacity-80">
                   <Settings className="mr-2 h-4 w-4" />
                   Settings
                 </Link>

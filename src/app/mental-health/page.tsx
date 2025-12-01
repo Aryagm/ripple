@@ -240,7 +240,7 @@ export default function MentalHealthPage() {
                   <Badge
                     key={factor}
                     variant={selectedFactors.includes(factor) ? 'default' : 'outline'}
-                    className="cursor-pointer capitalize"
+                    className="cursor-pointer capitalize transition-all hover:scale-105"
                     onClick={() => toggleFactor(factor)}
                   >
                     {factor}
