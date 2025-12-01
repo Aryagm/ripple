@@ -300,7 +300,7 @@ export default function SleepPage() {
                     <div
                       key={factor.id}
                       className={`flex items-center gap-2 p-3 rounded-lg cursor-pointer transition-colors ${
-                        factors[factor.id] ? 'bg-primary/20 border border-primary/50' : 'bg-secondary/50'
+                        factors[factor.id] ? 'bg-primary/20 border border-primary/50' : 'bg-secondary/50 hover:bg-secondary/70'
                       }`}
                       onClick={() => toggleFactor(factor.id)}
                     >

@@ -18,6 +18,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Slider } from '@/components/ui/slider';
 import { v4 as uuidv4 } from 'uuid';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import {
   ChevronLeft,
   ChevronRight,
@@ -259,8 +260,14 @@ export default function OnboardingPage() {
       case 'welcome':
         return (
           <div className="text-center space-y-6 py-8">
-            <div className="w-20 h-20 mx-auto rounded-2xl bg-primary flex items-center justify-center">
-              <span className="text-4xl font-bold text-primary-foreground">R</span>
+            <div className="w-32 h-32 mx-auto rounded-2xl flex items-center justify-center overflow-hidden">
+              <Image
+                src="/images/ripple_logo.png"
+                alt="Ripple"
+                width={128}
+                height={128}
+                className="w-full h-full object-contain"
+              />
             </div>
             <div className="space-y-2">
               <h1 className="text-3xl font-bold">Welcome to Ripple</h1>
@@ -695,7 +702,7 @@ export default function OnboardingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-background via-blue-500/5 to-blue-500/15 dark:from-background dark:via-blue-500/10 dark:to-blue-500/20">
       <div className="max-w-lg mx-auto px-4 py-6">
         {/* Progress */}
         <div className="mb-6 space-y-2">
